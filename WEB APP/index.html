@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MPFS Inventory Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+    .topbar {
+      background: #3c8dbc;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layout {
+      display: flex;
+      min-height: calc(100vh - 50px);
+    }
+    .sidebar {
+      width: 220px;
+      background: #222d32;
+      color: #b8c7ce;
+      padding-top: 10px;
+    }
+    .sidebar h3 {
+      color: #fff;
+      padding: 10px 15px;
+      margin: 0;
+      font-size: 16px;
+      border-bottom: 1px solid #1a2226;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    .sidebar li:hover {
+      background: #1e282c;
+      color: #fff;
+    }
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .stat-box {
+      color: #fff;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    .stat-users { background: #00a65a; }
+    .stat-categories { background: #dd4b39; }
+    .stat-products { background: #00c0ef; }
+    .stat-sales { background: #f39c12; }
+    .stat-title {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 2fr 2fr 1.5fr;
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+    th {
+      background: #f9fafc;
+      font-weight: bold;
+    }
+    .product-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+    }
+    .product-list li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .product-name {
+      font-weight: bold;
+    }
+    .product-meta {
+      color: #777;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="title">MPFS INVENTORY</div>
+    <div class="meta">
+      <span>February 4, 2019, 8:55 am</span> |
+      <span>Logged in as: Admin User</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <ul>
+        <li>Dashboard</li>
+        <li>User Management</li>
+        <li>Categories</li>
+        <li>Products</li>
+        <li>Inventory</li>
+        <li>Media</li>
+        <li>Orders</li>
+        <li>Sales</li>
+        <li>Sales Report</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section class="stats">
+        <div class="stat-box stat-users">
+          <div class="stat-title">Users</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat-box stat-categories">
+          <div class="stat-title">Categories</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat-box stat-products">
+          <div class="stat-title">Products</div>
+          <div class="stat-value">7</div>
+        </div>
+        <div class="stat-box stat-sales">
+          <div class="stat-title">Sales</div>
+          <div class="stat-value">15</div>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <h2>Highest Sale Products</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Total Sold</th>
+                <th>Total Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Raspberry Pi</td>
+                <td>6</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>Arduino Nano</td>
+                <td>4</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>DHT Sensor</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>PIR Passive Infrared Sensor</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Electronics Project Enclosure Case Box</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>Latest Sales</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Date</th>
+                <th>Total Sale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Arduino Nano</td>
+                <td>2019-02-03</td>
+                <td>$10.00</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Raspberry Pi</td>
+                <td>2019-02-03</td>
+                <td>$100.00</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Electronics Project Enclosure Case Box</td>
+                <td>2019-02-03</td>
+                <td>$30.00</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>PIR Passive Infrared Sensor</td>
+                <td>2019-02-03</td>
+                <td>$6.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>Recently Added Products</h2>
+          <ul class="product-list">
+            <li>
+              <div class="product-name">PIR Passive Infrared Sensor</div>
+              <div class="product-meta">Sensors, $6</div>
+            </li>
+            <li>
+              <div class="product-name">Electronics Project Enclosure Case Box</div>
+              <div class="product-meta">Electronics, $30</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
