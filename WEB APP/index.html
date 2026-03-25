@@ -11,11 +11,11 @@
   <pre id="output"></pre>
 
   <script>
-    async function loadWorldState() {
-      const res = await fetch("http://localhost:3000/worldstate");
-      const data = await res.json();
-      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
-    }
+  async function loadWorldState() {
+    const res = await fetch("https://3000-yourname-12se_major_project-xxxxx.githubpreview.dev/worldstate");
+    const data = await res.json();
+    document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+  }
   </script>
 </body>
 </html>
