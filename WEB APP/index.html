@@ -2,20 +2,33 @@
 <html>
 <head>
   <title>World State Viewer</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 8px; }
+  </style>
 </head>
 <body>
   <h1>World State API Viewer</h1>
 
   <button onclick="loadWorldState()">Load World State</button>
 
-  <pre id="output"></pre>
+  <pre id="output">Click the button to load data...</pre>
 
   <script>
-  async function loadWorldState() {
-    const res = await fetch("https://3000-yourname-12se_major_project-xxxxx.githubpreview.dev/worldstate");
-    const data = await res.json();
-    document.getElementById("output").textContent = JSON.stringify(data, null, 2);
-  }
+    async function loadWorldState() {
+      const api = "https://curly-succotash-69pgw6pq-3000.githubpreview.dev/worldstate";
+
+      try {
+        const res = await fetch(api);
+        const data = await res.json();
+
+        document.getElementById("output").textContent =
+          JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("output").textContent =
+          "Error fetching data: " + err;
+      }
+    }
   </script>
 </body>
 </html>
