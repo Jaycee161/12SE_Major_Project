@@ -1,0 +1,12 @@
+{
+  "name": "worldstate-api",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}

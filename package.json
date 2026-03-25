@@ -1,0 +1,24 @@
+{
+  "name": "12se_major_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaycee161/12SE_Major_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jaycee161/12SE_Major_Project/issues"
+  },
+  "homepage": "https://github.com/Jaycee161/12SE_Major_Project#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
